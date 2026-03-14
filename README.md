@@ -27,4 +27,4 @@ This project provided me with hands on experience with building and connecting m
 - Azure CLI
   
 ## Steps
- *work in progress*
+ *work in progress..................*
