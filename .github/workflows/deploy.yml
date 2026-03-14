@@ -13,12 +13,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Upload to Azure Storage
-      uses: azure/CLI@v1
+    - name: Azure Login
+      uses: azure/login@v1
       with:
-        inlineScript: |
-          az storage blob upload-batch \
-            --account-name efrenresumelab \
-            --destination '$web' \
-            --source . \
-            --overwrite
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Upload files to Azure Storage
+      run: |
+        az storage blob upload-batch \
+          --account-name efrenresumelab \
+          --destination '$web' \
+          --source . \
+          --overwrite
