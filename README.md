@@ -50,5 +50,14 @@ Step 1: Create Azure Storage Account
 
 Step 2: Uploade Resume Website Files
 
--
+- Convert your most up to date resume into HTML code
+- Verify the format looks presentable, Use an AI tool to assit with formatting if youre not too familiar with HTML
+- Create a CSS and javascript file(you can use the ones in this repository)
+- Go to your created storage > Containers > $web > upload > upload the 3 files.
+<img width="2540" height="758" alt="code files" src="https://github.com/user-attachments/assets/d26666d4-cfc4-468b-b999-31f0744265dc" />
 
+---
+
+Step 3: Created Azure Cosmos DB
+
+-  
