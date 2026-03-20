@@ -130,5 +130,93 @@ Step 9: Connect Frontend to API
 
 Step 10: TEST your website 
 
+-Go to your Your frontend URL (Static Website URL)
+-Verify there is a visistor counter that updates on every refresh.
 
-    <p>Visitor Count: <span id="counter">Loading...</span></p>
+---
+
+Step 11: Automate using GITHUB
+
+- go to Github.com and sing into your account
+- create a new repository and upload all your website files
+<img width="1187" height="492" alt="github" src="https://github.com/user-attachments/assets/4d9cce26-3d7b-453e-853c-a7f52168d4c9" />
+
+---
+
+Step 12: Create Azure Service Principal (Auth for GitHub)
+
+- Run the following command in Azure CLI to grant GIthub to deploy to Azure securely:
+
+      az ad sp create-for-rbac --name "github-deploy" --role contributor \
+        --scopes /subscriptions/YOUR_SUBSCRIPTION_ID \
+        --sdk-auth
+- The output should look like this:
+  
+      {
+        "clientId": "...",
+        "clientSecret": "...",
+        "subscriptionId": "...",
+        "tenantId": "..."
+      }
+
+---
+
+Step 13: Add Github Secrets
+
+- Go to your repo → Settings → Secrets and variables → Actions
+- select add and name it: AZURE_CREDENTIALS
+- Paste full JSON from previous step
+<img width="997" height="180" alt="secret" src="https://github.com/user-attachments/assets/4b49282b-344e-424a-bf4d-e93e955b8855" />
+
+---
+
+Step 14: Create Frontend Deployment Workflow
+
+-Go to .github/workflows/backend.yml and paste the folowing code:
+
+    name: Deploy Resume to Azure Storage
+    
+    on:
+      push:
+        branches:
+          - main
+    
+    jobs:
+      deploy:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v3
+    
+        - name: Azure Login
+          uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+        - name: Upload files to Azure Storage
+          run: |
+            az storage blob upload-batch \
+              --account-name efrenresumelab \
+              --destination '$web' \
+              --source . \
+              --overwrite
+
+---
+
+Step 15: Test Automation
+
+-From your Github repository, got to your HTML file and make chanegs
+- Once finished, select "commit changes" at the top right(go to the actions tab to see the progress)
+- refresh your website and verify your changes were made.
+
+---
+
+## 👋 About Me
+
+I'm currently a Helpdesk Engineer transitioning into Azure Cloud Engineering, any feedback would be greatly appreciated!
+
+Feel free to connect with me:
+
+- LinkedIn: https://www.linkedin.com/in/efren-martinez-it/
+- GitHub: https://github.com/The-Efren
