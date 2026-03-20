@@ -30,19 +30,13 @@ This project provided me with hands on experience with building and connecting m
 - Azure CLI
   
 ## Steps
-<p align="center">
-  🚧 <strong>Work In Progress</strong> 🚧 <br>
-  This project is actively being updated and improved.
-</p>
-
----
 
 Step 1: Create Azure Storage Account
 
 - Go to https://portal.azure.com/
 - Search for "storage accounts" and select create
 - Create a new storage account using required configuration
-- Select your newly created storage account and go to: Data Management > Static website > Enable Static website > Save.
+- Select your newly created storage account and go to: Data Management → Static website → Enable Static website → Save.
 <img width="2558" height="593" alt="storage" src="https://github.com/user-attachments/assets/55136daf-04fa-4852-9eea-56487b77135c" />
 <img width="2558" height="888" alt="Static website" src="https://github.com/user-attachments/assets/c3154465-bfa2-454f-a286-718df8249c7e" />
 
@@ -53,7 +47,7 @@ Step 2: Uploade Resume Website Files
 - Convert your most up to date resume into HTML code
 - Verify the format looks presentable, Use an AI tool to assit with formatting if youre not too familiar with HTML
 - Create a CSS and javascript file(you can use the ones in this repository)
-- Go to your created storage > Containers > $web > upload > upload the 3 files.
+- Go to your created storage → Containers → $web → upload → upload the 3 files.
 <img width="2540" height="758" alt="code files" src="https://github.com/user-attachments/assets/d26666d4-cfc4-468b-b999-31f0744265dc" />
 
 ---
