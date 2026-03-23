@@ -200,7 +200,7 @@ Step 14: Create Frontend Deployment Workflow
 
 Step 15: Test Automation
 
--From your Github repository, got to your HTML file and make chanegs
+-From your Github repository, got to your HTML file and make changes
 - Once finished, select "commit changes" at the top right(go to the actions tab to see the progress)
 - refresh your website and verify your changes were made.
 
