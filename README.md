@@ -1,4 +1,12 @@
 # Cloud Resume Challenge
+## ⚠️ Project Status
+
+This project is currently **offline** due to the expiration of Azure free-tier credits.
+
+The infrastructure was intentionally decommissioned to avoid unnecessary costs.
+All code, architecture, and deployment configurations remain available in this repository.
+
+💡 The project can be redeployed at any time using the provided infrastructure and CI/CD setup.
 
 ## Objective
 The goal of this project was to design and deploy a serveles resume website using Microsoft Azure. The project demonstrates core cloud engineer concepts including static website hosting, serverless compute, NoSQL database, API integration, and CI/CD automation.
